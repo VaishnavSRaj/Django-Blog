@@ -9,7 +9,7 @@ from django.contrib import auth
 def home(request):
     featured_posts = Blogs.objects.filter(
         is_featured=True, status="published"
-    ).order_by("updated_at")
+    ).order_by("-updated_at")
     posts = Blogs.objects.filter(is_featured=False, status="published")
     context = {"featured_posts": featured_posts, "posts": posts}
     return render(request, "home.html", context)
@@ -39,7 +39,7 @@ def login(request):
             user = auth.authenticate(username=username, password=password)
             if user is not None:
                 auth.login(request, user)
-                return redirect("home")
+                return redirect("dashboard")
     form = AuthenticationForm()
     context = {
         "forms": form,

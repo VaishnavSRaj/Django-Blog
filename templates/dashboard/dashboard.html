@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Vertical Navbar -->
+    {% include 'dashboard/sidebar.html' %}
+
+    <!-- Content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      >
+        <h1 class="h2">Dashboard</h1>
+      </div>
+
+      <!-- Cards -->
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header font-weight-bold bg-info text-dark">
+              All Categories
+            </div>
+            <div class="card-body">
+              <h3 class="card-text text-center">{{category_count}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header font-weight-bold bg-info text-dark">
+              All Posts
+            </div>
+            <div class="card-body">
+              <h3 class="card-text text-center">{{blog_count}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+{% endblock %}

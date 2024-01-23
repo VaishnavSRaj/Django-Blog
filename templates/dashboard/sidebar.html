@@ -1,0 +1,25 @@
+<nav class="col-md-2 d-none d-md-block bg-light nav-pills sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a
+          class="nav-link text-dark {% if '/dashboard/' == request.path %} active {% endif %}"
+          href="{% url 'dashboard' %}"
+        >
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark {% if '/categories' in request.path %} active {% endif %} " href="{% url 'categories' %}">
+          Categories
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark {% if '/posts' in request.path %} active {% endif %} " href="{% url 'posts' %}"> Posts </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark {% if '/logout' in request.path %} active {% endif %} " href="{% url 'logout' %}"> Logout </a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -67,3 +67,32 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+
+
+  /* Navbar styling */
+  .nav-tabs .nav-link {
+    border: 1px solid #dee2e6; /* Border color */
+    border-radius: 0;
+    color: #007bff; /* Default text color */
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #f8f9fa; /* Background color on hover */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff; /* Background color for active tab */
+    color: #ffffff; /* Text color for active tab */
+    border-color: #007bff; /* Border color for active tab */
+}
+
+/* Card styling */
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
