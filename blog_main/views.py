@@ -39,7 +39,7 @@ def login(request):
             user = auth.authenticate(username=username, password=password)
             if user is not None:
                 auth.login(request, user)
-                return redirect("dashboard")
+                return redirect("home")
     form = AuthenticationForm()
     context = {
         "forms": form,

@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Vertical Navbar -->
+    {% include 'dashboard/sidebar.html' %}
+    <!-- Content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      {% if perms.auth.view_user%}
+      {% load crispy_forms_tags %}
+      <h3 class="text-center">Add users</h3>
+      <form action="{% url 'add_users' %}" method="POST">
+        {% csrf_token %} {{form |crispy}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      {% else %}
+      <h2> You are not authorized </h2>
+      {% endif %}
+    </main>
+  </div>
+</div>
+
+{% endblock %}
