@@ -33,6 +33,9 @@ class Blogs(models.Model):
     class Meta:
         verbose_name_plural = "Blogs"
 
+    def __str__(self):
+        return self.title
+
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

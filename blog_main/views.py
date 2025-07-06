@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from blogs.models import Blogs
 from .forms import RegistrationForm
